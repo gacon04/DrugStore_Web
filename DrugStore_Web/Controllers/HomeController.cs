@@ -23,7 +23,6 @@ namespace DrugStore_Web.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Đây là trang liên hệ nhà thuốc.";
-
             return View();
         }
     }
