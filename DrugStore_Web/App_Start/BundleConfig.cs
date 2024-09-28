@@ -24,7 +24,10 @@ namespace DrugStore_Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/css/style.css",
+                      "~/Content/sass/style.css",
                       "~/Content/site.css"));
+           
         }
     }
 }

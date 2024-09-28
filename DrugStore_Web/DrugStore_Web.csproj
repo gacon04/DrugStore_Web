@@ -56,12 +56,21 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.9\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -127,13 +136,31 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\ContactMess.cs" />
+    <Compile Include="Models\DrugStoreDBContext.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DrugStoreDB.mdf" />
+    <Content Include="App_Data\DrugStoreDB_log.ldf">
+      <DependentUpon>DrugStoreDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -190,6 +217,10 @@
     <Content Include="Content\img\banner\banner-2.jpg" />
     <Content Include="Content\img\banner\banner-3.jpg" />
     <Content Include="Content\img\banner\banner-4.jpg" />
+    <Content Include="Content\img\banner\left1.png" />
+    <Content Include="Content\img\banner\left2.png" />
+    <Content Include="Content\img\banner\left3.png" />
+    <Content Include="Content\img\banner\left4.png" />
     <Content Include="Content\img\banner\menu-banner-1.jpg" />
     <Content Include="Content\img\banner\menu-banner-1.png" />
     <Content Include="Content\img\banner\menu-banner-2.jpg" />
@@ -365,6 +396,11 @@
     <Content Include="Content\img\img-slide\24.jpg" />
     <Content Include="Content\img\img-slide\3.jpg" />
     <Content Include="Content\img\img-slide\4.jpg" />
+    <Content Include="Content\img\KhoSanPham\Xisat\1.jpg" />
+    <Content Include="Content\img\KhoSanPham\Xisat\2.jpg" />
+    <Content Include="Content\img\KhoSanPham\Xisat\3.jpg" />
+    <Content Include="Content\img\KhoSanPham\Xisat\4.jpg" />
+    <Content Include="Content\img\KhoSanPham\Xisat\5.jpg" />
     <Content Include="Content\img\logo-2.png" />
     <Content Include="Content\img\logo-3.png" />
     <Content Include="Content\img\logo.jpg" />
@@ -465,6 +501,8 @@
     <Content Include="Content\img\slider\64.jpg" />
     <Content Include="Content\img\slider\71.jpg" />
     <Content Include="Content\img\slider\72.jpg" />
+    <Content Include="Content\img\slider\main1.png" />
+    <Content Include="Content\img\slider\main2.png" />
     <Content Include="Content\img\team\1.jpg" />
     <Content Include="Content\img\team\2.jpg" />
     <Content Include="Content\img\team\21.jpg" />
@@ -483,6 +521,7 @@
     <Content Include="Content\img\testimonial\5.jpg" />
     <Content Include="Content\img\testimonial\6.jpg" />
     <Content Include="Content\img\testimonial\7.jpg" />
+    <Content Include="Content\img\TrangChu\may-do-huyet-ap-bap-tay-omron-jpn600-0-k4461.jpg" />
     <Content Include="Content\js\contact.js" />
     <Content Include="Content\js\google-map.js" />
     <Content Include="Content\js\main.js" />
@@ -500,6 +539,10 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <Content Include="Content\css\style.css.map" />
     <Content Include="Content\fonts\flaticon.eot" />
     <Content Include="Content\fonts\flaticon.ttf" />
@@ -571,13 +614,20 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\About\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\AllProducts.cshtml" />
+    <Content Include="Views\Product\GetAllCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Content\img\TinTuc\" />
     <Folder Include="Content\media\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Blog\" />
+    <Folder Include="Views\Cart\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

@@ -6,16 +6,11 @@ using System.Web.Mvc;
 
 namespace DrugStore_Web.Controllers
 {
-    public class HomeController : Controller
+    public class BlogController : Controller
     {
+        // GET: Blog
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Đây là trang liên hệ nhà thuốc.";
             return View();
         }
     }
