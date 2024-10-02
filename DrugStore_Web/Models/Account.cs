@@ -12,7 +12,6 @@ namespace DrugStore_Web.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
-        [Required]
         [StringLength(255)] 
         public string Address { get; set; }
 

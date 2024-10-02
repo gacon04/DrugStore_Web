@@ -13,13 +13,11 @@ namespace DrugStore_Web.Controllers
         {
             return View();
         }
-        public ActionResult GetAllCategory()
+        public ActionResult ProdInfo(int id)
         {
-            using (DrugStoreDBContext db = new DrugStoreDBContext())
-            {
-                List<Category> categories = db.Categories.ToList();
-                return View(categories); 
-            }
+            
+            return View();
         }
+        
     }
 }

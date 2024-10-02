@@ -14,5 +14,25 @@ namespace DrugStore_Web.Controllers
         {
             return View();
         }
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+        [HttpPost]
+        
+        public ActionResult Service()
+        {
+            return View();
+        }
+        public ActionResult GoogleMapLocations()
+        {
+            return View();
+        }
+        public ActionResult FAQ()
+        {
+
+            return View();
+        }
+        
     }
 }

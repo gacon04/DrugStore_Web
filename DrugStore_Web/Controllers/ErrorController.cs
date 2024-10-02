@@ -6,13 +6,12 @@ using System.Web.Mvc;
 
 namespace DrugStore_Web.Controllers
 {
-    public class HomeController : Controller
+    public class ErrorController : Controller
     {
+        // GET: Error
         public ActionResult Index()
         {
             return View();
         }
-
-        
     }
 }
