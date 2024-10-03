@@ -7,7 +7,7 @@ using System.Web;
 
 namespace DrugStore_Web.Models
 {
-    public class Category
+    public class DanhMuc
     {
         // Khóa chính
         [Key]
@@ -17,20 +17,20 @@ namespace DrugStore_Web.Models
         // Tên danh mục (bắt buộc)
         [Required]
         [StringLength(255)] // Đặt độ dài tối đa cho tên
-        public string Name { get; set; }
+        public string TenDanhMuc { get; set; }
 
         // ID danh mục cha (có thể null)
         public int? ParentId { get; set; }
 
         // Ngày tạo (mặc định là ngày hiện tại)
         [Required]
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime NgayTao { get; set; } = DateTime.Now;
 
         // Liên kết đến danh mục cha (nếu có)
         [ForeignKey("ParentId")]
-        public virtual Category ParentCategory { get; set; }
+        public virtual DanhMuc DanhMucCha { get; set; }
 
         // Liên kết đến các danh mục con (nếu có)
-        public virtual ICollection<Category> SubCategories { get; set; }
+        public virtual ICollection<DanhMuc> DanhMucCon { get; set; }
     }
 }

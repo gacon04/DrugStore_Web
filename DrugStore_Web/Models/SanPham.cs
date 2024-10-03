@@ -7,30 +7,30 @@ using System.Web;
 
 namespace DrugStore_Web.Models
 {
-    public class Product
+    public class SanPham
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string Name { get; set; }
+        public string TenSP { get; set; }
 
-        public string Description { get; set; }
-
-        [Required]
-        public double Price { get; set; }
+        public string MieuTa { get; set; }
 
         [Required]
-        public int Stock { get; set; }
+        public double Gia { get; set; }
 
-        public int? CategoryId { get; set; } // Nullable cho quan hệ tùy chọn
+        [Required]
+        public int ConHang { get; set; }
+
+        public int? MaDanhMuc { get; set; } // Nullable cho quan hệ tùy chọn
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime NgayTao { get; set; } = DateTime.Now;
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime UpdatedAt { get; set; } = DateTime.Now;
+        public DateTime CapNhat { get; set; } = DateTime.Now;
 
         // Optional: Navigation property nếu có bảng Category
         // public virtual Category Category { get; set; }

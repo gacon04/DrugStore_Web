@@ -7,15 +7,15 @@ using System.Web;
 
 namespace DrugStore_Web.Models
 {
-    public class Cart
+    public class GioHang
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
-        public int UserId { get; set; } // Khóa ngoại liên kết tới bảng Users
+        public int MaNguoiDung { get; set; } // Khóa ngoại liên kết tới bảng Users
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime NgayTao { get; set; } = DateTime.Now;
     }
 }

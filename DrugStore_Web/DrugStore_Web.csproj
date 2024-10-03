@@ -148,14 +148,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\Blog.cs" />
-    <Compile Include="Models\Cart.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\ContactMess.cs" />
-    <Compile Include="Models\DrugStoreDBContext.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="Migrations\202409281630503_InitialCreate.cs" />
+    <Compile Include="Migrations\202409281630503_InitialCreate.Designer.cs">
+      <DependentUpon>202409281630503_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410030202063_UpdateContactMessModel.cs" />
+    <Compile Include="Migrations\202410030202063_UpdateContactMessModel.Designer.cs">
+      <DependentUpon>202410030202063_UpdateContactMessModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410031037003_RemoveDatabaseGenCreatedAt.cs" />
+    <Compile Include="Migrations\202410031037003_RemoveDatabaseGenCreatedAt.Designer.cs">
+      <DependentUpon>202410031037003_RemoveDatabaseGenCreatedAt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\TaiKhoan.cs" />
+    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\DanhMuc.cs" />
+    <Compile Include="Models\TinNhanLienHe.cs" />
+    <Compile Include="Models\DrugStoreDBContext.cs" />
+    <Compile Include="Models\SanPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -633,6 +645,10 @@
     <Content Include="Views\Product\ProdInfo.cshtml" />
     <Content Include="Views\Account\ThongTinTaiKhoan.cshtml" />
     <Content Include="Views\About\FAQ.cshtml" />
+    <Content Include="Views\About\ReceiveMesss.cshtml" />
+    <Content Include="Views\Shared\SuccessSend.cshtml" />
+    <Content Include="Views\About\Success.cshtml" />
+    <Content Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\img\TinTuc\" />
@@ -668,6 +684,17 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202409281630503_InitialCreate.resx">
+      <DependentUpon>202409281630503_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410030202063_UpdateContactMessModel.resx">
+      <DependentUpon>202410030202063_UpdateContactMessModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410031037003_RemoveDatabaseGenCreatedAt.resx">
+      <DependentUpon>202410031037003_RemoveDatabaseGenCreatedAt.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

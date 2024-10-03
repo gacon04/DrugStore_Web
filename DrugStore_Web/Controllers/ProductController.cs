@@ -13,7 +13,7 @@ namespace DrugStore_Web.Controllers
         {
             return View();
         }
-        public ActionResult ProdInfo(int id)
+        public ActionResult ProdInfo(int? id)
         {
             
             return View();
