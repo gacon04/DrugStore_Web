@@ -8,6 +8,8 @@ namespace DrugStore_Web.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("")]
+        [Route("TrangChu")]
         public ActionResult Index()
         {
             return View();
