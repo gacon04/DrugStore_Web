@@ -11,10 +11,13 @@ namespace DrugStore_Web.Controllers
     {
         // GET: About
         DrugStoreDBContext _context = new DrugStoreDBContext();
+
+        [Route("LienHe")]
         public ActionResult Contact()
         {
             return View();
         }
+        
         public ActionResult AboutUs()
         {
             return View();
